@@ -55,7 +55,7 @@ inquirer
             }
         },
         {
-            // Section for user to explain how to use this project
+            // Section to explain how to use this project
             type: 'input',
             message: 'Provide a brief explanation on how to use this project.',
             name: 'usage',
@@ -63,7 +63,21 @@ inquirer
                 if (usageInput) {
                     return true;
                 } else {
-                    console.log('Please enter a useage explanation description to continue')
+                    console.log('Please enter a useage explanation to continue')
+                    return false;
+                }
+            }
+        },
+        {
+            // Section to input how to contribute to this project
+            type: 'input',
+            message: 'How will coders contribute to this project?',
+            name: 'contribution',
+            validate: contributionInput => {
+                if (contributionInput) {
+                    return true;
+                } else {
+                    console.log('Please enter how to contribute to continue')
                     return false;
                 }
             }
