@@ -19,6 +19,42 @@ const fs = require('fs');
 // `;
 // }
 
+const generatelicense = (type) => {
+  let color;
+  if (type === "MIT") color = "grey";
+  if (type === "Apache") color = "blue";
+  if (type === "MPL") color = "green";
+  if (type === "CC") color = "purple";
+
+  return (
+    `
+  <h3>license</h3>
+  <img src="https://img.shields.io/badge/license-${type}-${color}" alt="badge-${type}" height="44" />
+  `
+  );
+};
+
+
+const generateMarkdown = ({
+  title,
+  description,
+  tableOfContents,
+  installation,
+  usage,
+  license,
+  constribution,
+  test,
+  github,
+  email,
+}) => {
+  console.log("GENERATING PAGE...");
+  const template = (
+    `
+    
+    `
+  );
+
+};
 
 
 module.exports = {

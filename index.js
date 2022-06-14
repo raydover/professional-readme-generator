@@ -80,10 +80,10 @@ const questions = [
         // Section user to choose section titles listed on the table of contents
         type: 'rawlist',
         message: 'What license would you like to use for this project?',
-        name: 'licensing',
+        name: 'license',
         choices: ['MIT', 'Apache', 'MPL', 'CC'],
-        validate: licensingInput => {
-            if (licensingInput) {
+        validate: licenseInput => {
+            if (licenseInput) {
                 return true;
             } else {
                 console.log('Please choose a license continue.');
@@ -109,9 +109,9 @@ const questions = [
         // Section user input how do coders test this project
         type: 'input',
         message: 'How do coders test this project?',
-        name: 'testing',
-        validate: testingInput => {
-            if (testingInput) {
+        name: 'test',
+        validate: testInput => {
+            if (testInput) {
                 return true;
             } else {
                 console.log('Please enter how to test to continue.')
