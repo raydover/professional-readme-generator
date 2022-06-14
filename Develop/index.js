@@ -8,7 +8,7 @@ const questions = [];
 inquirer
     .prompt([
         {
-            // Section for user to input a project title
+            // Section user to input a project title
             type: 'input',
             message: 'What is the title of your project?',
             name: 'title',
@@ -22,7 +22,7 @@ inquirer
             }
         },
         {
-            // Section for user to input a project description
+            // Section user to input a project description
             type: 'input',
             message: 'Provide a brief description of your project.',
             name: 'description',
@@ -36,7 +36,7 @@ inquirer
             }
         },
         {
-            // Section for user to choose section titles listed on the table of contents
+            // Section user to choose section titles listed on the table of contents
             type: 'checkbox',
             message: 'What section titles would you like listed on your table of contents?',
             name: 'tableOfContents',
@@ -51,7 +51,7 @@ inquirer
             }
         },
         {
-            // Section for user to input a project installation information
+            // Section user to input a project installation information
             type: 'input',
             message: 'How do you install your project?',
             name: 'installation',
@@ -65,7 +65,7 @@ inquirer
             }
         },
         {
-            // Section to explain how to use this project
+            // Section user to explain how to use this project
             type: 'input',
             message: 'Provide a brief explanation on how to use this project.',
             name: 'usage',
@@ -79,7 +79,7 @@ inquirer
             }
         },
         {
-            // Section for user to choose section titles listed on the table of contents
+            // Section user to choose section titles listed on the table of contents
             type: 'checkbox',
             message: 'What license would you like to use for this project?',
             name: 'licensing',
@@ -94,7 +94,7 @@ inquirer
             }
         },
         {
-            // Section to input how to contribute to this project
+            // Section user to input how to contribute to this project
             type: 'input',
             message: 'How will coders contribute to this project?',
             name: 'contribution',
@@ -108,7 +108,7 @@ inquirer
             }
         },
         {
-            // Section input how do coders test this project
+            // Section user input how do coders test this project
             type: 'input',
             message: 'How do coders test this project?',
             name: 'testing',
@@ -122,7 +122,7 @@ inquirer
             }
         },
         {
-            // Section to input github user information to this project
+            // Section user to input github user information to this project
             type: 'input',
             message: 'Enter your github username.',
             name: 'github',
@@ -136,7 +136,7 @@ inquirer
             }
         },
         {
-            // Section to input how to contribute to this project
+            // Section user to input how to contribute to this project
             type: 'input',
             message: 'Enter your email address.',
             name: 'email',
@@ -151,23 +151,23 @@ inquirer
         },
     ])
 
-    .then((data) => {
-        const filename = `${data.name.toLowerCase().split(' ').join('')}.json`;
-
-        fs.writeFile(filename, JSON.stringify(data, null, 2), (err) =>
-            err ? console.log(err) : console.log('Success!')
-        );
-    });
-
-
-
-
-
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) { }
+function writeToFile(fileName, data) {
+    fs.writeToFile(fileName, data, (err) => {
+        if (err)
+            throw err;
+        console.log('Success! README Transfer Complete.')
+    });
+};
 
 // TODO: Create a function to initialize app
-function init() { }
+function init() {
+    inquirer.prompt(questions)
+        .then(function (userInput) {
+            console.log(userInput)
+            writeToFile("REAMEME.md", generateMaekdown(userInput));
+        });
+};
 
 // Function call to initialize app
 init();
