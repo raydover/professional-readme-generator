@@ -6,7 +6,7 @@ const fs = require('fs');
 inquirer
     .prompt([
         {
-            // Question for user to input a project title
+            // Section for user to input a project title
             type: 'input',
             message: 'What is the title of your project?',
             name: 'title',
@@ -24,7 +24,7 @@ inquirer
             type: 'input',
             message: 'Provide a brief description of your project.',
             name: 'description',
-            validate: titleInput => {
+            validate: descriptionInput => {
                 if (descriptionInput) {
                     return true;
                 } else {
@@ -39,6 +39,20 @@ inquirer
             message: 'What section titles would you like listed on your table of contents?',
             name: 'tableOfContents',
             choices: ['Descripton', 'Resources', 'Visuals', 'Author and Aknowledgements'],
+        },
+        {
+            // Section for user to input a project installation information
+            type: 'input',
+            message: 'How do you install your project?',
+            name: 'installation',
+            validate: installationInput => {
+                if (installationInput) {
+                    return true;
+                } else {
+                    console.log('Please enter installation information to continue')
+                    return false;
+                }
+            }
         },
     ])
 
