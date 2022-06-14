@@ -1,5 +1,3 @@
-const fs = require('fs');
-
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 // function renderLicenseBadge(license) {}
@@ -19,6 +17,7 @@ const fs = require('fs');
 // `;
 // }
 
+
 const generatelicense = (type) => {
   let color;
   if (type === "MIT") color = "grey";
@@ -32,8 +31,8 @@ const generatelicense = (type) => {
   <img src="https://img.shields.io/badge/license-${type}-${color}" alt="badge-${type}" height="44" />
   `
   );
-};
 
+};
 
 const generateMarkdown = ({
   title,
@@ -42,17 +41,50 @@ const generateMarkdown = ({
   installation,
   usage,
   license,
-  constribution,
+  contribution,
   test,
   github,
   email,
 }) => {
+
   console.log("GENERATING PAGE...");
   const template = (
     `
-    
+# ${title}
+
+## Description
+${description}
+
+## Table of Contents
+${tableOfContents[0]}
+${tableOfContents[1]}
+${tableOfContents[2]}
+${tableOfContents[3]}
+
+## Installation
+${installation}
+
+## Usage
+${usage}
+
+## Contribution
+${contribution}
+
+## Test 
+${test}
+
+## GitHub: ${github}
+
+## Email: ${email}
+
+## License
+${generatelicense(license)}
     `
   );
+
+  fs.writeFileSync('./output/README.md', template);
+  console.log('TEMPLATE GENERATED!');
+  process.exit();
 
 };
 
