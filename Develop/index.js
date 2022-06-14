@@ -151,23 +151,23 @@ inquirer
         },
     ])
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-    fs.writeToFile(fileName, data, (err) => {
-        if (err)
-            throw err;
-        console.log('Success! README Transfer Complete.')
+    .then((data) => {
+        const filename = `${data.name.toLowerCase().split(' ').join('')}.json`;
+
+        fs.writeToFile(filename, JSON.stringify(data, null, 2), (err) =>
+            err ? console.log(err) : console.log('Success!')
+        );
     });
-};
+
+// TODO: Create a function to write README file
+// function writeToFile(fileName, data) {
+
+// }
 
 // TODO: Create a function to initialize app
 function init() {
-    inquirer.prompt(questions)
-        .then(function (userInput) {
-            console.log(userInput)
-            writeToFile("REAMEME.md", generateMaekdown(userInput));
-        });
-};
+
+}
 
 // Function call to initialize app
 init();
