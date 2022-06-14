@@ -14,7 +14,7 @@ inquirer
                 if (titleInput) {
                     return true;
                 } else {
-                    console.log('Please enter a title to continue')
+                    console.log('Please enter a title to continue.')
                     return false;
                 }
             }
@@ -28,7 +28,7 @@ inquirer
                 if (descriptionInput) {
                     return true;
                 } else {
-                    console.log('Please enter a description to continue')
+                    console.log('Please enter a description to continue.')
                     return false;
                 }
             }
@@ -39,6 +39,14 @@ inquirer
             message: 'What section titles would you like listed on your table of contents?',
             name: 'tableOfContents',
             choices: ['Descripton', 'Resources', 'Visuals', 'Author and Aknowledgements'],
+            validate: tableOfContentsInput => {
+                if (tableOfContentsInput) {
+                    return true;
+                } else {
+                    console.log('Please choose which subject titles to continue.');
+                    return false;
+                }
+            }
         },
         {
             // Section for user to input a project installation information
@@ -49,7 +57,7 @@ inquirer
                 if (installationInput) {
                     return true;
                 } else {
-                    console.log('Please enter installation information to continue')
+                    console.log('Please enter installation information to continue.')
                     return false;
                 }
             }
@@ -63,7 +71,22 @@ inquirer
                 if (usageInput) {
                     return true;
                 } else {
-                    console.log('Please enter a useage explanation to continue')
+                    console.log('Please enter a useage explanation to continue.')
+                    return false;
+                }
+            }
+        },
+        {
+            // Section for user to choose section titles listed on the table of contents
+            type: 'checkbox',
+            message: 'What license would you like to use for this project?',
+            name: 'licensing',
+            choices: ['License1', 'License2', 'License3', 'License4'],
+            validate: licensingInput => {
+                if (licensingInput) {
+                    return true;
+                } else {
+                    console.log('Please choose a license continue.');
                     return false;
                 }
             }
@@ -77,7 +100,7 @@ inquirer
                 if (contributionInput) {
                     return true;
                 } else {
-                    console.log('Please enter how to contribute to continue')
+                    console.log('Please enter how to contribute to continue.')
                     return false;
                 }
             }
