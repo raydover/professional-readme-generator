@@ -1,42 +1,25 @@
 // TODO: Include packages needed for this application
-const badmath = require('./Develop/badmath.js');
-
-console.log(badmath.pie);
-
-console.log(badmath.predictable());
-
-// TODO: Create an array of questions for user input
-console.log(process.argv[2]);
-
-const questions = [];
-
 const inquirer = require('inquirer');
 const fs = require('fs');
 
+// TODO: Create an array of questions for user input
 inquirer
     .prompt([
         {
+            // Question for user to input title
             type: 'input',
-            message: 'What is your user name?',
-            name: 'name',
-        },
-        {
-            type: 'checkbox',
-            message: 'What language do you know?',
-            name: 'language',
-            choices: ['JS', 'HTML', 'CSS'],
-        },
-        {
-            type: 'list',
-            message: 'What is your preferred method of communication?',
-            name: 'preferred',
-            choices: ['phone', 'email', 'text'],
+            message: 'What is the title of your project?',
+            name: 'title',
+            validate: titleInput => {
+                if (titleInput) {
+                    return true;
+                } else {
+                    console.log('Please enter a title to continue')
+                    return false;
+                }
+            }
         },
     ])
-
-    // .then((response) => {
-    //     console.log('Success!')
-    //     console.log(response)
 
     .then((data) => {
         const filename = `${data.name.toLowerCase().split(' ').join('')}.json`;
@@ -46,13 +29,15 @@ inquirer
         );
     });
 
-    // });
+
+
+
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) { }
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() { }
 
 // Function call to initialize app
 init();
