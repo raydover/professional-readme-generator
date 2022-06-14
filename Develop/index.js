@@ -3,6 +3,8 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 
 // TODO: Create an array of questions for user input
+const questions = [];
+
 inquirer
     .prompt([
         {
@@ -101,6 +103,48 @@ inquirer
                     return true;
                 } else {
                     console.log('Please enter how to contribute to continue.')
+                    return false;
+                }
+            }
+        },
+        {
+            // Section input how do coders test this project
+            type: 'input',
+            message: 'How do coders test this project?',
+            name: 'testing',
+            validate: testingInput => {
+                if (testingInput) {
+                    return true;
+                } else {
+                    console.log('Please enter how to test to continue.')
+                    return false;
+                }
+            }
+        },
+        {
+            // Section to input github user information to this project
+            type: 'input',
+            message: 'Enter your github username.',
+            name: 'github',
+            validate: githubInput => {
+                if (githubInput) {
+                    return true;
+                } else {
+                    console.log('Please enter a github username to continue.')
+                    return false;
+                }
+            }
+        },
+        {
+            // Section to input how to contribute to this project
+            type: 'input',
+            message: 'Enter your email address.',
+            name: 'email',
+            validate: emailInput => {
+                if (emailInput) {
+                    return true;
+                } else {
+                    console.log('Please enter an email address to continue.')
                     return false;
                 }
             }
