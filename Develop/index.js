@@ -33,6 +33,13 @@ inquirer
                 }
             }
         },
+        {
+            // Section for user to choose section titles listed on the table of contents
+            type: 'checkbox',
+            message: 'What section titles would you like listed on your table of contents?',
+            name: 'tableOfContents',
+            choices: ['Descripton', 'Resources', 'Visuals', 'Author and Aknowledgements'],
+        },
     ])
 
     .then((data) => {
