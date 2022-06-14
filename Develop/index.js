@@ -6,7 +6,7 @@ const fs = require('fs');
 inquirer
     .prompt([
         {
-            // Question for user to input title
+            // Question for user to input a project title
             type: 'input',
             message: 'What is the title of your project?',
             name: 'title',
@@ -15,6 +15,20 @@ inquirer
                     return true;
                 } else {
                     console.log('Please enter a title to continue')
+                    return false;
+                }
+            }
+        },
+        {
+            // Section for user to input a project description
+            type: 'input',
+            message: 'Provide a brief description of your project.',
+            name: 'description',
+            validate: titleInput => {
+                if (descriptionInput) {
+                    return true;
+                } else {
+                    console.log('Please enter a description to continue')
                     return false;
                 }
             }
