@@ -54,6 +54,20 @@ inquirer
                 }
             }
         },
+        {
+            // Section for user to explain how to use this project
+            type: 'input',
+            message: 'Provide a brief explanation on how to use this project.',
+            name: 'usage',
+            validate: usageInput => {
+                if (usageInput) {
+                    return true;
+                } else {
+                    console.log('Please enter a useage explanation description to continue')
+                    return false;
+                }
+            }
+        },
     ])
 
     .then((data) => {
