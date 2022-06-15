@@ -5,7 +5,7 @@
 1. [Description](#description)
 2. [Resources](#resources)
 3. [Visuals](#visuals)
-4. [Authors and Acknowledgements](#author-and-aknowledgements)
+4. [Authors and Acknowledgements](#authors-and-acknowledgements)
 
 ## Decription
 
