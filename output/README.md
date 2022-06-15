@@ -2,7 +2,7 @@
 # ray
 
 ## Description
-  ray
+ray
 
 ## Table of Contents
   1. [installation](#installation)
@@ -15,16 +15,16 @@
 
 
 ## Installation
-  ray
+ray
 
 ## Usage
-  ray
+ray
 
 ## Contribution
-  ray
+ray
 
 ## Test 
-  ray
+ray
 
 ### GitHub: ray
 
@@ -33,6 +33,6 @@
 
 ## License
 
-<img src="https://img.shields.io/badge/license-MIT-grey" alt="badge-MIT" height="44" />
+<img src="https://img.shields.io/badge/license-MIT-goldenrod" alt="badge-MIT" height="44" />
   
     

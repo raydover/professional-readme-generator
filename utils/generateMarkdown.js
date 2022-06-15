@@ -55,7 +55,7 @@ const generateMarkdown = ({
 # ${title}
 
 ## Description
-  ${description}
+${description}
 
 ## Table of Contents
   1. [installation](#installation)
@@ -68,20 +68,22 @@ const generateMarkdown = ({
 
 
 ## Installation
-  ${installation}
+${installation}
 
 ## Usage
-  ${usage}
+${usage}
 
 ## Contribution
-  ${contribution}
+${contribution}
 
 ## Test 
-  ${test}
+${test}
 
-### GitHub: ${github}
+## GitHub: 
+${github}
 
-### Email: ${email}
+## Email: 
+${email}
 
 ${generatelicense(license)}
     `
