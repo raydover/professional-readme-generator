@@ -31,7 +31,7 @@ This assignement required students to create a command-line application that dyn
 
 ## Visuals
 
-![Professional README Generator Video](./INSERT LINK TO VIDEO)
+![Professional README Generator Video](./assets/Professional-Readme-Generator.gif)
 
 ## Resources
 
