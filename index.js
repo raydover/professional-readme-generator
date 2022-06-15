@@ -34,21 +34,6 @@ const questions = [
         }
     },
     {
-        // Section user to choose section titles listed on the table of contents
-        type: 'checkbox',
-        message: 'What section titles would you like listed on your table of contents?',
-        name: 'tableOfContents',
-        choices: ['Descripton', 'Resources', 'Visuals', 'Author and Aknowledgements'],
-        validate: tableOfContentsInput => {
-            if (tableOfContentsInput) {
-                return true;
-            } else {
-                console.log('Please choose which subject titles to continue.');
-                return false;
-            }
-        }
-    },
-    {
         // Section user to input a project installation information
         type: 'input',
         message: 'How do you install your project?',
@@ -81,7 +66,7 @@ const questions = [
         type: 'rawlist',
         message: 'What license would you like to use for this project?',
         name: 'license',
-        choices: ['MIT', 'Apache', 'MPL', 'CC'],
+        choices: ['MIT', 'Apache', 'MPL', 'CC', 'NONE'],
         validate: licenseInput => {
             if (licenseInput) {
                 return true;

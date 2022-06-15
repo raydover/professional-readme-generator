@@ -17,18 +17,21 @@
 // `;
 // }
 
+const fs = require('fs');
 
 const generatelicense = (type) => {
   let color;
-  if (type === "MIT") color = "grey";
+  if (type === "MIT") color = "goldenrod";
   if (type === "Apache") color = "blue";
   if (type === "MPL") color = "green";
   if (type === "CC") color = "purple";
+  if (type === "NONE") color = "red";
 
   return (
     `
-  <h3>license</h3>
-  <img src="https://img.shields.io/badge/license-${type}-${color}" alt="badge-${type}" height="44" />
+## License
+
+<img src="https://img.shields.io/badge/license-${type}-${color}" alt="badge-${type}" height="44" />
   `
   );
 
@@ -37,7 +40,6 @@ const generatelicense = (type) => {
 const generateMarkdown = ({
   title,
   description,
-  tableOfContents,
   installation,
   usage,
   license,
@@ -53,31 +55,34 @@ const generateMarkdown = ({
 # ${title}
 
 ## Description
-${description}
+  ${description}
 
 ## Table of Contents
-${tableOfContents[0]}
-${tableOfContents[1]}
-${tableOfContents[2]}
-${tableOfContents[3]}
+  1. [installation](#installation)
+  2. [usage](#usage)
+  3. [contribution](#contribution)
+  4. [test](#test)
+  5. [github](#github)
+  6. [email](#email)
+  7. [license](#license)
+
 
 ## Installation
-${installation}
+  ${installation}
 
 ## Usage
-${usage}
+  ${usage}
 
 ## Contribution
-${contribution}
+  ${contribution}
 
 ## Test 
-${test}
+  ${test}
 
-## GitHub: ${github}
+### GitHub: ${github}
 
-## Email: ${email}
+### Email: ${email}
 
-## License
 ${generatelicense(license)}
     `
   );
