@@ -1,8 +1,8 @@
 
-# Professional README Generator
+# Ray
 
 ## Description
-This assignement required students to create a command-line application that dynamically generates a professional README.md file from a user's input using the Inquirer package. The application will be invoked by using the following command: node index.js.
+ray
 
 ## Table of Contents
   1. [installation](#installation)
@@ -15,26 +15,26 @@ This assignement required students to create a command-line application that dyn
 
 
 ## Installation
-Download through GitHub
+ray
 
 ## Usage
-Create a Pro Readme File
+ray
 
 ## Contribution
-REPO
+trasy
 
 ## Test 
-VS Code Terminal
+ldfkg
 
 ## GitHub: 
-raydover
+rasy foert
 
 ## Email: 
-raymonddover@yahoo.com
+ere
 
 
 ## License
 
-<img src="https://img.shields.io/badge/license-Apache-blue" alt="badge-Apache" height="44" />
+<img src="https://img.shields.io/badge/license-MPL-green" alt="badge-MPL" height="44" />
   
     

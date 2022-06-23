@@ -39,6 +39,8 @@ This assignement required students to create a command-line application that dyn
 
 - [Repository](https://github.com/raydover/professional-readme-generator)
 
+- [My Video Link](https://drive.google.com/file/d/1Husm2D7hADspk_y4DP2mJRE6N9SPCzf9/view)
+
 - [How to create a Professional README](https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide)
 
 ## Installation
